@@ -1,19 +1,18 @@
 import { useEffect } from 'react';
-import { useAppDispatch } from './app/hooks'; // We'll create this hook next
+import { useAppDispatch } from './app/hooks';
 import { connectWebSocket } from './services/transitDataService';
 import { PageWrapper } from './components/layout/PageWrapper';
 import { HomePage } from './pages/HomePage';
 
-// A dedicated component to manage the WebSocket connection lifecycle
+// This component's only job is to manage the WebSocket connection.
 const WebSocketManager = () => {
 	const dispatch = useAppDispatch();
 	useEffect(() => {
+		// This runs once when the app loads and starts the connection.
 		connectWebSocket(dispatch);
-		// Note: We'd add cleanup logic here for a real app,
-		// but for this project, the connection is app-wide and permanent.
 	}, [dispatch]);
 
-	return null; // This component does not render anything
+	return null;
 };
 
 function App() {

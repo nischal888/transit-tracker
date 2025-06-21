@@ -10,7 +10,7 @@ const wss = new WebSocketServer({ server });
 const PORT = 8080;
 
 // This holds our "database" of vehicles in memory
-let vehicles = createInitialVehicles(100);
+let vehicles = createInitialVehicles(25);
 
 wss.on('connection', (ws) => {
 	console.log('Client connected');
