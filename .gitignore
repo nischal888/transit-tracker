@@ -1,0 +1,32 @@
+# Node modules
+node_modules/
+tracker-server/node_modules/
+
+# Build outputs 
+dist/
+build/
+tracker-server/dist/
+tracker-server/build/
+
+# Logs 
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# TypeScript build info 
+tracker-server/**/*.tsbuildinfo
+
+# Environment variables
+.env*
+tracker-server/.env*
+
+# OS and editor
+.DS_Store
+Thumbs.db
+.vscode/
+
+# Optional caches 
+.next/
+.cache/
+tracker-server/.cache/
