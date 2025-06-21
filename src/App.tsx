@@ -1,26 +1,27 @@
 import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useAppDispatch } from './app/hooks'; // We'll create this hook next
 import { connectWebSocket } from './services/transitDataService';
-import type { RootState } from './app/store';
+import { PageWrapper } from './components/layout/PageWrapper';
+import { HomePage } from './pages/HomePage';
 
-function App() {
-	const dispatch = useDispatch();
-	const { vehicles, isConnected } = useSelector(
-		(state: RootState) => state.fleet
-	);
-
+// A dedicated component to manage the WebSocket connection lifecycle
+const WebSocketManager = () => {
+	const dispatch = useAppDispatch();
 	useEffect(() => {
-		// This initiates the connection
 		connectWebSocket(dispatch);
+		// Note: We'd add cleanup logic here for a real app,
+		// but for this project, the connection is app-wide and permanent.
 	}, [dispatch]);
 
+	return null; // This component does not render anything
+};
+
+function App() {
 	return (
-		<div>
-			<h1>TransitTracker</h1>
-			<p>Connection Status: {isConnected ? 'Connected' : 'Disconnected'}</p>
-			<p>Tracking {vehicles.length} vehicles.</p>
-			<p>Check the console to see the real-time data stream!</p>
-		</div>
+		<PageWrapper>
+			<WebSocketManager />
+			<HomePage />
+		</PageWrapper>
 	);
 }
 
