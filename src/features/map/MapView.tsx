@@ -43,11 +43,9 @@ L.Icon.Default.mergeOptions({
 	iconRetinaUrl: markerIcon2x,
 	shadowUrl: markerShadow,
 });
-// ----------------
 
 const MapView = () => {
 	const { vehicles } = useAppSelector((state) => state.fleet);
-	const initialPosition: [number, number] = [60.1699, 24.9384]; // Helsinki
 
 	if (vehicles.length === 0) {
 		return (
@@ -70,7 +68,6 @@ const MapView = () => {
 				<VehicleMarker key={vehicle.id} vehicle={vehicle} />
 			))}
 
-			{/* Add our new component here and pass it the vehicles */}
 			<FitBounds vehicles={vehicles} />
 		</MapContainer>
 	);

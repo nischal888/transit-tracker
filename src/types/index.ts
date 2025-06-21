@@ -9,4 +9,5 @@ export interface Vehicle {
 	lon: number;
 	route: string;
 	status: VehicleStatus;
+	speed: number;
 }
