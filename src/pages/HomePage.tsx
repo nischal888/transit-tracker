@@ -8,7 +8,7 @@ export const HomePage = () => {
 	const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
 	return (
-		<div className="h-screen grid grid-rows-[auto_1fr] overflow-hidden">
+		<div className="h-[100dvh] grid grid-rows-[auto_1fr] overflow-hidden">
 			<Header />
 
 			<main className="relative overflow-hidden">
