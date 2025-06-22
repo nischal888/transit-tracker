@@ -48,7 +48,6 @@ const StatusPieChart = () => {
 			{
 				name: 'Status',
 				type: 'pie',
-				colorByPoint: true,
 				data: chartData,
 			},
 		],
