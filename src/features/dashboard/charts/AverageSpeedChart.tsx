@@ -50,10 +50,23 @@ const AverageSpeedChart = () => {
 	const chartOptions: Highcharts.Options = {
 		chart: { type: 'spline', backgroundColor: 'transparent' },
 		title: { text: undefined },
-		xAxis: { type: 'datetime', tickPixelInterval: 150 },
+		xAxis: {
+			type: 'datetime',
+			tickPixelInterval: 150,
+			labels: {
+				style: {
+					color: '#F0F0F0', // Brighter
+				},
+			},
+		},
 		yAxis: {
 			title: { text: 'Avg. Speed (km/h)' },
-			plotLines: [{ value: 0, width: 1, color: '#808080' }],
+			plotLines: [{ value: 0, width: 1, color: '#FFFFFF' }],
+			labels: {
+				style: {
+					color: '#F0F0F0', // Brighter
+				},
+			},
 		},
 		tooltip: {
 			headerFormat: '<b>{series.name}</b><br/>',

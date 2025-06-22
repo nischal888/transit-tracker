@@ -23,6 +23,7 @@ const StatusPieChart = () => {
 			type: 'pie',
 			backgroundColor: 'transparent',
 		},
+
 		title: {
 			text: undefined, // We have a title in our card, so we hide the chart's own title
 		},
@@ -36,6 +37,9 @@ const StatusPieChart = () => {
 				dataLabels: {
 					enabled: true,
 					format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+					style: {
+						color: '#F0F0F0',
+					},
 				},
 				showInLegend: false,
 			},

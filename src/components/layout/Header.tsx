@@ -7,7 +7,7 @@ const StatusIndicator: React.FC<{ isConnected: boolean }> = ({
 	isConnected,
 }) => {
 	const bgColor = isConnected ? 'bg-green-500' : 'bg-red-500';
-	const pulseClass = isConnected ? 'animate-pulse' : '';
+	const pulseClass = isConnected ? 'animate-ping' : '';
 
 	return (
 		<div className="flex items-center space-x-2">

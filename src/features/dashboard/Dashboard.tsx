@@ -14,7 +14,7 @@ const ChartCard: React.FC<{ title: string; children?: React.ReactNode }> = ({
 
 export const Dashboard = () => {
 	return (
-		<div className="p-4 bg-gray-900 h-full overflow-y-auto">
+		<div className="p-4 bg-gray-900">
 			<div className="grid grid-cols-1 gap-6">
 				{' '}
 				{/* Increased gap for better spacing */}
