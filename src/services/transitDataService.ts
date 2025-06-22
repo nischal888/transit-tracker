@@ -8,7 +8,7 @@ import {
 let socket: WebSocket;
 
 export const connectWebSocket = (dispatch: AppDispatch) => {
-	socket = new WebSocket('ws://transit-tracker-fli0.onrender.com');
+	socket = new WebSocket('wss://transit-tracker-fli0.onrender.com');
 
 	socket.onopen = () => {
 		console.log('WebSocket Connected');
