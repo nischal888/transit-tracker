@@ -67,7 +67,7 @@ npm run dev
 ### 3. Start the Frontend App
 
 ```bash
-cd transit-tracker-server
+cd transit-tracker
 npm install
 npm run dev
 ```
