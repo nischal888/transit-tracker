@@ -9,6 +9,9 @@ const wss = new WebSocketServer({ server });
 
 const PORT = 8080;
 
+app.get('/start', (_req, res) => {
+	res.status(200).send('Server is Up');
+});
 // This holds our "database" of vehicles in memory
 let vehicles = createInitialVehicles(25);
 

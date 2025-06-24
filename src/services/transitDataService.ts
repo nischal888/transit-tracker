@@ -8,7 +8,11 @@ import {
 let socket: WebSocket;
 
 export const connectWebSocket = (dispatch: AppDispatch) => {
-	socket = new WebSocket('wss://transit-tracker-fli0.onrender.com');
+	const isLocalHost = window.location.hostname === 'localhost';
+	const socketUrl = isLocalHost
+		? 'ws://localhost:8080'
+		: 'wss://transit-tracker-fli0.onrender.com';
+	socket = new WebSocket(socketUrl);
 
 	socket.onopen = () => {
 		console.log('WebSocket Connected');
@@ -18,7 +22,6 @@ export const connectWebSocket = (dispatch: AppDispatch) => {
 	socket.onmessage = (event) => {
 		const data = JSON.parse(event.data);
 
-		// Log to see the data flowing
 		console.log('Received data:', data.type);
 
 		if (data.type === 'initial_data') {
