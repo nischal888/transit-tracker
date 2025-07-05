@@ -57,13 +57,23 @@ export const updateVehicles = (vehicles: Vehicle[]): Vehicle[] => {
 				newStatus = 'On Time';
 			}
 		}
+		const bump = (Math.random() - 0.5) * 5; // −2.5 … +2.5
+		let nextSpeed = v.speed + bump; // tentative speed
+
+		if (nextSpeed >= 70) {
+			// hit / cross the ceiling
+			nextSpeed = 40; // drop to floor
+		} else if (nextSpeed < 0) {
+			// never negative
+			nextSpeed = 0;
+		}
 
 		return {
 			...v,
 			lat: v.lat + (Math.random() - 0.5) * 0.001,
 			lon: v.lon + (Math.random() - 0.5) * 0.001,
 			status: newStatus,
-			speed: Math.max(0, v.speed + (Math.random() - 0.5) * 5),
+			speed: nextSpeed,
 		};
 	});
 };
